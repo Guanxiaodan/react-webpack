@@ -6,6 +6,3 @@ npm-debug.log.*
 .idea
 dist
 package-lock.json
-build/*
-server_compiled
-server_compiled/*
