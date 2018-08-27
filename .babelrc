@@ -1,0 +1,9 @@
+// babel的配置文件
+// babel默认支持ES6的语法，所以要想支持jsx语法，需要进行配置
+
+{
+    "presets":[ // 代表babel支持的语法, 这里还需要安装包，这里的报的安装有特定语法： npm i babel-preset-es2015 babel-preset-es2015-loose babel-preset-react -D
+        ["es2015", {"loose":true}],
+        "react"
+    ]
+}
