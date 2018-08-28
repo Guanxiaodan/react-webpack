@@ -9,7 +9,7 @@ module.exports= {
     output:{  // 指定webpack打包后的输出路径,下面这个name会取值entry里面的内容。方括号标识变量，打包完成后webpack会生成一个hash,我们把hash添加到输出的文件名后面
         filename: '[name].[hash].js', // 设置输出的文件名
         path: path.join(__dirname, '../dist'), // 文件的输出路径
-        publicPath: '', // 静态资源引用的路径，会加到静态资源的前面。用来区分这个资源是静态资源还是api请求过来的（就是通过加的这个publicPath的前缀来作区分），比如说要使用CDN，只要把CDN的地址写上去就行了
+        publicPath: '/public', // 静态资源引用的路径，会加到静态资源的前面。用来区分这个资源是静态资源还是api请求过来的（就是通过加的这个publicPath的前缀来作区分），比如说要使用CDN，只要把CDN的地址写上去就行了
     }, 
     module:{ // 配置一下，让webpack识别jsx语法（因为jsx不是标准的js语法，所以webpack默认是无法识别的）
         rules: [ // rules里面可以配置很多loader 
@@ -27,6 +27,8 @@ module.exports= {
         ]
     },
     plugins:[ // 下面的这个HTMLPlugin能生成一个HTML文件， 并且在变异的时候，把上面entry里面的js文件都注入到HTML里面，执行完npm run build 之后可以看到dist下面生成了一个index.html文件，文件注入了app.xxxxx.js文件
-        new HTMLPlugin()
+        new HTMLPlugin({ // 在webpack中使用template.html
+            template: path.join(__dirname, '../client/template.html') // 这样在dist下面生成的内容会以template.html为模板，用生成的js换掉其中的<app></app>
+        })
     ]
 }
