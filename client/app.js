@@ -4,3 +4,4 @@ const ReactDom = require('react-dom'); // 用来把react组件渲染到都dom里
 import App from './APP.jsx';
 
 ReactDom.render(<App/>, document.body) // 使用reactDom插件将组件挂载到body上
+ 
