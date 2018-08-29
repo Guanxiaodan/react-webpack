@@ -8,3 +8,9 @@
 
 ## 文件引用
 package.json ----使用script命令，指定webpack config文件途径----> webpack.config.client.js ----webpack设置应用入口文件----> app.js ----挂载页面----> App.jsx
+
+## 文件怎么打开？
+1.前端打开：
+执行 npm run build ,用webstorm打开dist/index.html
+2.后端打开
+执行 npm run build ,npm start ,在浏览器输入localhost:3333

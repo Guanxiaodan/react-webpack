@@ -9,7 +9,7 @@ module.exports= {
     output:{  // 指定webpack打包后的输出路径,下面这个name会取值entry里面的内容。方括号标识变量，打包完成后webpack会生成一个hash,我们把hash添加到输出的文件名后面
         filename: 'server-entry.js', // 设置输出的文件名
         path: path.join(__dirname, '../dist'), // 文件的输出路径
-        publicPath: '/public', // 静态资源引用的路径，会加到静态资源的前面。用来区分这个资源是静态资源还是api请求过来的（就是通过加的这个publicPath的前缀来作区分），比如说要使用CDN，只要把CDN的地址写上去就行了
+        publicPath: '/public', // 静态资源引用的路径。/public会加到静态资源的前面。用来区分这个资源是静态资源还是api请求过来的（就是通过加的这个publicPath的前缀来作区分），比如说要使用CDN，只要把CDN的地址写上去就行了
         libraryTarget: 'commonjs2', // 打包出来的js使用的模块方案 ，比如umd,amd, cmd,commonjs
     }, 
     module:{ // 配置一下，让webpack识别jsx语法（因为jsx不是标准的js语法，所以webpack默认是无法识别的）

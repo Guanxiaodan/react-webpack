@@ -18,7 +18,7 @@ module.exports= {
                 loader: 'babel-loader', // 官方默认的jsx编译工具。这个loader可以将一些比较新的语法比如jsx，ES6,等等，编译成ES5语法。需要安装一下这个babel-loader包，但是还得安装一个babel-core核心插件,这个是babel的核心代码
             },
             {
-               test: /.js$/ ,
+               test: /.js$/ , // 编译它是因为我们使用了ES6语法
                loader:'babel-loader',
                exclude:[
                    path.join(__dirname, '../node_modules')
@@ -26,9 +26,9 @@ module.exports= {
             }
         ]
     },
-    plugins:[ // 下面的这个HTMLPlugin能生成一个HTML文件， 并且在变异的时候，把上面entry里面的js文件都注入到HTML里面，执行完npm run build 之后可以看到dist下面生成了一个index.html文件，文件注入了app.xxxxx.js文件
+    plugins:[ // 下面的这个HTMLPlugin能生成一个HTML文件（html-webpack-plugin插件的作用）， 并且在编译的时候，把上面entry里面的js文件都注入到HTML里面，执行完npm run build 之后可以看到dist下面生成了一个index.html文件，文件注入了app.xxxxx.js文件
         new HTMLPlugin({ // 在webpack中使用template.html
-            template: path.join(__dirname, '../client/template.html') // 这样在dist下面生成的内容会以template.html为模板，用生成的js换掉其中的<app></app>
+            template: path.join(__dirname, '../client/template.html') // 这样在dist下面生成的内容会以template.html为模板，而不用自己默认生成一个index.html
         })
     ]
 }
