@@ -5,5 +5,8 @@
     "presets":[ // 代表babel支持的语法, 这里还需要安装包，这里的报的安装有特定语法： npm i babel-preset-es2015 babel-preset-es2015-loose babel-preset-react -D
         ["es2015", {"loose":true}],
         "react"
+    ],
+    "plugins":[ // react-hot-loader是给hot-module-replacemen提供功能的工具
+        "react-hot-loader/babel"
     ]
 }
