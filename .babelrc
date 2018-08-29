@@ -9,4 +9,4 @@
     "plugins":[ // react-hot-loader是给hot-module-replacemen提供功能的工具
         "react-hot-loader/babel"
     ]
-}
+}  
