@@ -14,7 +14,7 @@ const template = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'ut
 app.get('*', function(req, res){
     const appString = ReactSSR.renderToString(serverEntry) // 将编译好的服务端代码放入web端编译好的indx.html中，返回给浏览器
     // 这里，服务端将已经处理好的dom结构（包括数据填充）放到index.html中，返回给浏览器
-    res.send(template.replace('<app></app>', appString))
+    res.send(template.replace('<!-- app -->', appString))
 })
 
 app.listen(3333, function(){
