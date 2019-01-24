@@ -1,0 +1,6 @@
+{
+    "presets": [ // 代表了babel支持的语法
+        ["es2015",{"loose": true}],
+        "react"
+    ]
+}
