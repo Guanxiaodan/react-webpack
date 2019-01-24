@@ -9,7 +9,7 @@ module.exports = {
     output:{
         filename:'[name].[hash].js',
         path: path.join(__dirname, '../dist'),
-        publicPath: ''
+        publicPath: '/public'
     },
     module:{
         rules:[
@@ -27,6 +27,8 @@ module.exports = {
         ]
     },
     plugins:[
-        new HTMLPlugin() // 可以生成一个HTML页面，同时在编译时将我们的entry注入到页面中，路径根据output里的配置生成
+        new HTMLPlugin({
+            template:path.join(__dirname, '../client/template.html')
+        }) // 可以生成一个HTML页面，同时在编译时将我们的entry注入到页面中，路径根据output里的配置生成
     ]
 }
