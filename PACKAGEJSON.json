@@ -1,0 +1,43 @@
+{
+    "name": "react-webpack",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build:client": "webpack --config build/webpack.config.client.js",
+      "build:server": "webpack --config build/webpack.config.server.js",
+      "clear": "rimraf dist",
+      "dev:client": "cross-env NODE_DEV=development webpack-dev-server --config build/webpack.config.client.js", // 开发环境中，自动编译改变的内容
+      "build": "npm run clear && npm run build:client && npm run build:server",
+      "start": "node server/server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Guanxiaodan/react-webpack.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Guanxiaodan/react-webpack/issues"
+    },
+    "homepage": "https://github.com/Guanxiaodan/react-webpack#readme",
+    "dependencies": {
+      "express": "^4.16.4",
+      "react": "^16.7.0",
+      "react-dom": "^16.7.0",
+      "webpack": "^4.29.0"
+    },
+    "devDependencies": {
+      "babel-core": "^6.26.3",
+      "babel-loader": "^7.1.5",
+      "babel-preset-es2015": "^6.24.1",
+      "babel-preset-es2015-loose": "^8.0.0",
+      "babel-preset-react": "^6.24.1",
+      "cross-env": "^5.2.0", // 用来浏览器之间兼容NODE_DEV
+      "html-webpack-plugin": "^3.2.0",
+      "rimraf": "^2.6.3",
+      "webpack-cli": "^3.2.1",
+      "webpack-dev-server": "^3.1.14"
+    }
+  }
+  
