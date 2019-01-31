@@ -4,9 +4,9 @@ const path = require('path')
  */
 module.exports = {
     mode:"development",
-    target: 'node', // webpack打包出来的内容在什么环境中执行，如果是浏览器就是node
+    target: 'node', // webpack打包出来的内容在什么环境中执行，如果是服务器就是node
     entry:{
-        app: path.join(__dirname,'../client/server.entry.js')
+        app: path.join(__dirname,'../client/server.entry.js') // 和客户端的入口也不一样
     },
     output:{
         filename:'server-entry.js',
