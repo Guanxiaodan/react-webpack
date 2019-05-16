@@ -23,8 +23,9 @@
   "homepage": "https://github.com/Guanxiaodan/react-webpack#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "react": "^16.7.0", 
+    "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-hot-loader": "^4.8.4",
     "webpack": "^4.29.0"
   },
   "devDependencies": {

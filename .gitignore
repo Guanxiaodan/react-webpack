@@ -6,3 +6,5 @@ npm-debug.log.*
 .idea
 dist
 package-lock.json
+.history/
+.history
